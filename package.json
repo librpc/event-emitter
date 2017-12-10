@@ -1,0 +1,46 @@
+{
+  "name": "event-emitter",
+  "version": "0.1.0",
+  "description": "Modern event emitter",
+  "keywords": [
+    "events",
+    "enitter"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/librpc/event-emitter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/librpc/event-emitter"
+  },
+  "bugs": {
+    "url": "https://github.com/librpc/event-emitter/issues",
+    "email": "broadsw.rd@yandex.ru"
+  },
+  "author": {
+    "name": "Vladimir Bykov",
+    "email": "broadsw.rd@yandex.ru",
+    "url": "https://github.com/broadsw0rd"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/fast-emitter.umd.js",
+  "module": "dist/fast-emitter.js",
+  "devDependencies": {
+    "array-shuffle": "1.0.1",
+    "benchmark": "2.1.4",
+    "cli-table2": "^0.2.0",
+    "eventemitter3": "^3.0.0",
+    "minivents": "2.2.0",
+    "mitt": "1.1.2",
+    "rollup": "0.49.2",
+    "snazzy": "7.0.0",
+    "standard": "10.0.3",
+    "uglify-js": "3.2.1"
+  },
+  "scripts": {
+    "check": "standard src/*.js | snazzy",
+    "build": "rollup -c",
+    "min": "uglify-js -c -m dist/fast-emitter.umd.js > dist/fast-emitter.min.js"
+  }
+}
