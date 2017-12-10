@@ -42,6 +42,7 @@
   "scripts": {
     "check": "standard src/*.js | snazzy",
     "build": "rollup -c",
+    "bench": "node bench/",
     "min": "uglifyjs dist/event-emitter.umd.js -c -m > dist/event-emitter.min.js"
   }
 }

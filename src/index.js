@@ -1,37 +1,36 @@
-import Events from './events.js'
-import Listeners from './listeners.js'
-
 class Emitter {
   constructor () {
-    this.events = new Events()
+    this.events = Object.create(null)
   }
 
   on (event, listener) {
-    var listeners = this.events.get(event)
+    var listeners = this.events[event]
 
     if (!listeners) {
-      listeners = new Listeners()
-      this.events.set(event, listeners)
+      listeners = []
+      this.events[event] = listeners
     }
 
-    listeners.add(listener)
+    listeners.push(listener)
   }
 
   off (event, listener) {
-    var listeners = this.events.get(event)
+    var listeners = this.events[event]
 
     if (listeners) {
-      listeners.remove(listener)
+      var idx = listeners.indexOf(listener)
+      if (idx !== -1) {
+        listeners.splice(idx, 1)
+      }
     }
   }
 
   emit (event, data) {
-    var listeners = this.events.get(event)
+    var listeners = this.events[event]
 
     if (listeners) {
-      var list = listeners.toArray()
-      for (var i = 0; i < list.length; i++) {
-        list[i](data)
+      for (var i = 0; i < listeners.length; i++) {
+        listeners[i](data)
       }
     }
   }
