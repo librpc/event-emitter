@@ -1,7 +1,15 @@
 var Table = require('cli-table2')
 var benchmark = require('./benchmark.js')
 
-var results = benchmark()
+var emitters = [
+  'events',
+  'minivents',
+  'mitt',
+  'eventemitter3',
+  '../dist/event-emitter.umd.js'
+]
+
+var results = benchmark(emitters)
 
 var table = new Table({
   head: ['EMITTER', 'ON', 'EMIT', 'OFF']

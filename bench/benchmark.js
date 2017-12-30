@@ -1,16 +1,6 @@
 var Benchmark = require('benchmark')
-
 var suite = require('./suite.js')
-
 var Suite = Benchmark.Suite
-
-var emitters = [
-  'events',
-  'minivents',
-  'mitt',
-  'eventemitter3',
-  '../dist/event-emitter.umd.js'
-]
 
 var results = []
 
@@ -18,7 +8,7 @@ function onComplete (event) {
   results.push(event)
 }
 
-function bench () {
+function bench (emitters) {
   var suites = []
 
   for (var i = 0; i < emitters.length; i++) {

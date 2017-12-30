@@ -1,5 +1,5 @@
 <h1 align="center">Event Emitter</h1>
-<h4 align="center">Event emitter</h4>
+<h4 align="center">Modern event emitter</h4>
 <p align="center">
   <a href="https://github.com/feross/standard" target="_blank">
     <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat" alt="js-standard-style"/>
@@ -17,13 +17,64 @@
 
 ## Features
 
+- Simple
+- Lightweight
+- Design with performance in mind
+
 ## Install
+
+```
+npm install --save @librpc/ee
+```
 
 ## Usage
 
+```js
+
+import EventEmitter from '@librpc/ee'
+
+var emitter = new EventEmitter()
+
+function listener (data) {
+  console.log(data)
+}
+
+emitter.on('event', listener)
+emitter.emit({ foo: 'bar' }) // -> { foo: 'bar' } in console
+emitter.off('event', listener)
+
+```
+
+
 ## API
 
+### `.on(event: string, listener: (data: any) => void)`
+
+### `.off(event: string, listener: (data: any) => void)`
+
+### `.emit(event: string, data: any)`
+
 ## Benchmark
+
+```
+> @librpc/ee@0.1.0 bench D:\Projects\event-emitter
+> node bench/
+
+┌──────────────────────────────┬────────┬───────┬─────────┐
+│ EMITTER                      │ ON     │ EMIT  │ OFF     │
+├──────────────────────────────┼────────┼───────┼─────────┤
+│ events                       │ 66,217 │ 3,964 │ 76,941  │
+├──────────────────────────────┼────────┼───────┼─────────┤
+│ minivents                    │ 18,800 │ 80    │ 6,537   │
+├──────────────────────────────┼────────┼───────┼─────────┤
+│ mitt                         │ 78,688 │ 534   │ 118,331 │
+├──────────────────────────────┼────────┼───────┼─────────┤
+│ eventemitter3                │ 19,363 │ 2,223 │ 11,169  │
+├──────────────────────────────┼────────┼───────┼─────────┤
+│ ../dist/event-emitter.umd.js │ 82,912 │ 6,497 │ 79,845  │
+└──────────────────────────────┴────────┴───────┴─────────┘
+
+```
 
 ## Development
 
