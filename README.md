@@ -30,7 +30,7 @@
 npm install --save @librpc/ee
 ```
 
-or download [dev](https://unpkg.com/@librpc/ee@0.1.0/dist/event-emitter.umd.js) or [prod](https://unpkg.com/@librpc/ee@0.1.0/dist/event-emitter.min.js) version
+or download [dev](https://unpkg.com/@librpc/ee/dist/event-emitter.umd.js) or [prod](https://unpkg.com/@librpc/ee/dist/event-emitter.min.js) version
 
 ## Usage
 
