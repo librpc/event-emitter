@@ -1,6 +1,9 @@
 <h1 align="center">Event Emitter</h1>
 <h4 align="center">Modern event emitter</h4>
 <p align="center">
+  <a href="https://www.npmjs.com/package/vectory" target="_blank">
+      <img src="https://img.shields.io/npm/v/vectory.svg" alt="NPM version" target="_blank"></img>
+   </a>
   <a href="https://github.com/feross/standard" target="_blank">
     <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat" alt="js-standard-style"/>
   </a>
@@ -17,8 +20,8 @@
 
 ## Features
 
-- Simple
-- Lightweight
+- Simple [37 LOC](https://github.com/librpc/event-emitter/blob/master/dist/event-emitter.js#L37)
+- Lightweight [522 bytes](https://github.com/librpc/event-emitter/blob/master/dist/event-emitter.min.js)
 - Design with performance in mind
 
 ## Install
@@ -26,6 +29,8 @@
 ```
 npm install --save @librpc/ee
 ```
+
+or download [dev](https://unpkg.com/@librpc/ee@0.1.0/dist/event-emitter.umd.js) or [prod](https://unpkg.com/@librpc/ee@0.1.0/dist/event-emitter.min.js) version
 
 ## Usage
 
@@ -42,7 +47,6 @@ function listener (data) {
 emitter.on('event', listener)
 emitter.emit({ foo: 'bar' }) // -> { foo: 'bar' } in console
 emitter.off('event', listener)
-
 ```
 
 
@@ -73,7 +77,6 @@ emitter.off('event', listener)
 ├──────────────────────────────┼────────┼───────┼─────────┤
 │ ../dist/event-emitter.umd.js │ 82,912 │ 6,497 │ 79,845  │
 └──────────────────────────────┴────────┴───────┴─────────┘
-
 ```
 
 ## Development
