@@ -7,6 +7,9 @@
   <a href="https://github.com/feross/standard" target="_blank">
     <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat" alt="js-standard-style"/>
   </a>
+  <a href="https://www.bithound.io/github/librpc/event-emitter">
+  	<img src="https://www.bithound.io/github/librpc/event-emitter/badges/score.svg" alt="bitHound Overall Score">
+  </a>
 </p>
 
 ## Table of Contents
