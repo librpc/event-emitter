@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Modern event emitter",
   "keywords": [
-    "events",
-    "enitter"
+    "eventemitter",
+    "event-emitter",
+    "pubsub"
   ],
   "license": "MIT",
   "homepage": "https://github.com/librpc/event-emitter",
@@ -27,6 +28,7 @@
   "main": "dist/event-emitter.cjs.js",
   "module": "dist/event-emitter.js",
   "cjs": "dist/event-emitter.cjs.js",
+  "min": "dist/event-emitter.min.js",
   "devDependencies": {
     "array-shuffle": "1.0.1",
     "benchmark": "2.1.4",
