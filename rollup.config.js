@@ -5,9 +5,10 @@ export default {
   input: 'src/index.js',
   output: [
     { file: pkg.main, format: 'umd', name: 'Emitter' },
-    { file: pkg.module, format: 'es' }
+    { file: pkg.module, format: 'es' },
+    { file: pkg.cjs, format: 'cjs' }
   ],
   plugins: [
-  	buble()
+    buble()
   ]
 }

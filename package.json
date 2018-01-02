@@ -24,8 +24,9 @@
   "files": [
     "dist"
   ],
-  "main": "dist/event-emitter.umd.js",
+  "main": "dist/event-emitter.cjs.js",
   "module": "dist/event-emitter.js",
+  "cjs": "dist/event-emitter.cjs.js",
   "devDependencies": {
     "array-shuffle": "1.0.1",
     "benchmark": "2.1.4",

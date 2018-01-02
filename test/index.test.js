@@ -5,7 +5,7 @@ test.createStream()
   .pipe(tapDiff())
   .pipe(process.stdout)
 
-var EventEmitter = require('../dist/event-emitter.umd.js')
+var EventEmitter = require('../dist/event-emitter.cjs.js')
 
 var emitter
 

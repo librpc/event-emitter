@@ -31,7 +31,8 @@
 
 - Simple [37 LOC](https://github.com/librpc/event-emitter/blob/master/dist/event-emitter.js#L37)
 - Lightweight [522 bytes](https://github.com/librpc/event-emitter/blob/master/dist/event-emitter.min.js)
-- Design with performance in mind
+- [Performant](#benchmark)
+- Inheritable
 
 ## Install
 
@@ -63,9 +64,15 @@ emitter.off('event', listener)
 
 ### `.on(event: string, listener: (data: any) => void)`
 
+Add listener to event. No context provided, use `Function.prototype.bind()`, arrow function or closure instead.
+
 ### `.off(event: string, listener: (data: any) => void)`
 
+Remove listener from event.
+
 ### `.emit(event: string, data: any)`
+
+Trigger an event. Multiple arguments not supported, use destructuring instead.
 
 ## Benchmark
 
