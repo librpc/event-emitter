@@ -62,15 +62,15 @@ emitter.off('event', listener)
 
 ## API
 
-### `.on(event: string, listener: (data: any) => void)`
+#### `.on(event: string, listener: (data: any) => void)`
 
 Add listener to event. No context provided, use `Function.prototype.bind()`, arrow function or closure instead.
 
-### `.off(event: string, listener: (data: any) => void)`
+#### `.off(event: string, listener: (data: any) => void)`
 
 Remove listener from event.
 
-### `.emit(event: string, data: any)`
+#### `.emit(event: string, data: any)`
 
 Trigger an event. Multiple arguments not supported, use destructuring instead.
 
