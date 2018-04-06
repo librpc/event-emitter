@@ -57,9 +57,7 @@ function suite (emitter) {
 
   function emit () {
     var event = `event${idx--}`
-    for (var i = 0; i < handlers.length; i++) {
-      emitter.emit(event, 42)
-    }
+    emitter.emit(event, 42)
   }
   
   function commonOff () {
