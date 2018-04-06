@@ -35,6 +35,7 @@
     "cli-table2": "0.2.0",
     "coveralls": "^3.0.0",
     "eventemitter3": "3.0.1",
+    "jsdoc-to-markdown": "^4.0.1",
     "minivents": "2.2.0",
     "mitt": "1.1.3",
     "nyc": "^11.4.1",
@@ -52,6 +53,7 @@
     "test": "nyc --reporter=html --reporter=lcov --reporter=text tape test/index.test.js",
     "min": "uglifyjs dist/event-emitter.umd.js -c -m > dist/event-emitter.min.js",
     "bench": "node bench/",
+    "docs": "jsdoc2md src/index.js",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "dependencies": {}

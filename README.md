@@ -52,24 +52,92 @@ function listener (data) {
 }
 
 emitter.on('event', listener)
-emitter.emit({ foo: 'bar' }) // -> { foo: 'bar' } in console
+emitter.emit('event', { foo: 'bar' }) // -> { foo: 'bar' } in console
 emitter.off('event', listener)
 ```
 
 
 ## API
 
-#### `.on(event: string, listener: (data: any) => void)`
+### Emitter
 
-Add listener to event. No context provided, use `Function.prototype.bind()`, arrow function or closure instead.
+  * [new Emitter()](#new_Emitter_new)
+  * [.on(event, listener)](#Emitter+on) ⇒ [<code>Emitter</code>](#Emitter)
+  * [.off(event, listener)](#Emitter+off) ⇒ [<code>Emitter</code>](#Emitter)
+  * [.emit(event, data)](#Emitter+emit) ⇒ [<code>Emitter</code>](#Emitter)
 
-#### `.off(event: string, listener: (data: any) => void)`
+<a name="new_Emitter_new"></a>
 
+### new Emitter()
+Create an event emitter
+
+**Example**
+```js
+var emitter = new Emitter()
+```
+<a name="Emitter+on"></a>
+
+### emitter.on(event, listener) ⇒ [<code>Emitter</code>](#Emitter)
+Add listener to event. No context provided, use Function.prototype.bind(), arrow function or closure instead.
+
+**Kind**: instance method of [<code>Emitter</code>](#Emitter)
+**Returns**: [<code>Emitter</code>](#Emitter) - Return self
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>string</code> | Event name |
+| listener | [<code>listener</code>](#listener) | Event listener |
+
+**Example**
+```js
+function listener (data) {
+ console.log(data)
+}
+
+emitter.on('event', listener)
+```
+<a name="Emitter+off"></a>
+
+### emitter.off(event, listener) ⇒ [<code>Emitter</code>](#Emitter)
 Remove listener from event.
 
-#### `.emit(event: string, data: any)`
+**Kind**: instance method of [<code>Emitter</code>](#Emitter)
+**Returns**: [<code>Emitter</code>](#Emitter) - Return self
 
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>string</code> | Event name |
+| listener | [<code>listener</code>](#listener) | Event listener |
+
+**Example**
+```js
+emitter.off('event', listener)
+```
+<a name="Emitter+emit"></a>
+
+### emitter.emit(event, data) ⇒ [<code>Emitter</code>](#Emitter)
 Trigger an event. Multiple arguments not supported, use destructuring instead.
+
+**Kind**: instance method of [<code>Emitter</code>](#Emitter)
+**Returns**: [<code>Emitter</code>](#Emitter) - Return self
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>string</code> | Event name |
+| data | <code>\*</code> | Event data |
+
+**Example**
+```js
+emitter.emit('event', { foo: 'bar' })
+```
+<a name="listener"></a>
+
+#### listener : <code>function</code>
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>\*</code> | Any data could be passed to event listener |
+
 
 ## Benchmark
 
@@ -101,3 +169,4 @@ Command | Description
 `npm run bench` | Run [benchmark](http://benchmarkjs.com/)
 `npm run test` | Run tests by [tape](https://github.com/substack/tape) and compute code coverage by [nyc](https://github.com/bcoe/nyc)
 `npm run min` | Minify code by [UglifyJS](https://github.com/mishoo/UglifyJS2)
+`npm run docs` | Create docs by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown)
