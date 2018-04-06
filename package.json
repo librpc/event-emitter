@@ -1,6 +1,6 @@
 {
   "name": "@librpc/ee",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Modern event emitter",
   "keywords": [
     "eventemitter",
