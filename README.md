@@ -142,7 +142,7 @@ emitter.emit('event', { foo: 'bar' })
 ## Benchmark
 
 ```
-> @librpc/ee@1.0.2 bench D:\Projects\event-emitter
+> @librpc/ee@1.0.4 bench D:\Projects\event-emitter
 > node bench/
 
 ┌──────────────────────────────┬─────────┬───────────┬─────────┐
