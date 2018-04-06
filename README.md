@@ -26,7 +26,7 @@
 
 ## Features
 
-- Simple [37 LOC](https://github.com/librpc/event-emitter/blob/master/dist/event-emitter.js#L37)
+- Simple [87 LOC](https://github.com/librpc/event-emitter/blob/master/dist/event-emitter.js#L87)
 - Lightweight [522 bytes](https://github.com/librpc/event-emitter/blob/master/dist/event-emitter.min.js)
 - [Performant](#benchmark)
 - Inheritable
